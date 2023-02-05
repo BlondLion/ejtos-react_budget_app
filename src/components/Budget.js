@@ -43,25 +43,29 @@ const Budget = () => {
     return (
         
         <div className='alert alert-secondary'>
-            <span>Budget: £
-                <input
-                    required='required'
-                    type='number'
-                    value={newbudg}
-                    placeholder={budget}
-                    style={{ marginLeft: '1rem' , size: 10}}
-                    onChange={(event) => setNewbudg(event.target.value)}>
-                    
-
-                </input>
-                <button className="btn btn-primary btn-sm" onClick={submitEvent} style={{ marginLeft: '1rem' }}>
-                        Set
-                </button>
-            </span>
-            <span> Modify your budget: </span>
-            <span><button className="btn btn-secondary btn-sm" onClick={event=> increaseAllocation(10)}>+10</button></span>
-            <span><button className="btn btn-secondary btn-sm" onClick={event=> decreaseAllocation(10)}>-10</button></span>
-            
+            <p align="center">
+            <div>
+                <label>Budget: £
+                    <input
+                        required='required'
+                        type='number'
+                        value={newbudg}
+                        placeholder={budget}
+                        style={{ marginLeft: '1rem' }}
+                        onChange={(event) => setNewbudg(event.target.value)}>
+                    </input>                              
+                </label>
+            </div>
+            </p>
+            <p align="center">
+            <div class="btn btn-light" style={{margintop: '1rem'}}>
+                
+                    <button className="btn btn-secondary btn-sm" onClick={event=> increaseAllocation(10)} style={{ marginLeft: '1rem' }}>+10</button>
+                    <button className="btn btn-secondary btn-sm" onClick={event=> decreaseAllocation(10)} style={{ marginLeft: '1rem' }}>-10</button>
+                    <button className="btn btn-primary btn-sm" onClick={submitEvent} style={{ marginLeft: '1rem', marginRight: '1rem'}}>Set</button>
+               
+            </div>
+            </p>
         </div>
     );
 };
